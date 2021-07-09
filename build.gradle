@@ -12,6 +12,9 @@ repositories {
 
 dependencies {
     implementation "com.github.Anuken.Arc:arc-core:b4dc34071be92f154034d9d9621e015f5c49030c"
+    implementation 'com.github.Anuken.Arc:backend-sdl:b4dc34071be92f154034d9d9621e015f5c49030c'
+    implementation 'com.github.Anuken.Arc:natives:b4dc34071be92f154034d9d9621e015f5c49030c'
+    implementation 'com.github.Anuken.Arc:natives-desktop:b4dc34071be92f154034d9d9621e015f5c49030c'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
