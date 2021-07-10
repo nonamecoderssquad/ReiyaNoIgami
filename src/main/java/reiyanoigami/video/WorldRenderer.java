@@ -3,6 +3,7 @@ package reiyanoigami.video;
 import arc.ApplicationListener;
 import arc.files.Fi;
 import arc.util.Log;
+import reiyanoigami.Vars;
 
 public class WorldRenderer implements ApplicationListener {
     @Override
@@ -11,10 +12,15 @@ public class WorldRenderer implements ApplicationListener {
 
     @Override
     public void resize(int width, int height) {
+        Vars.screenW=width;
+        Vars.screenH=height;
     }
 
     @Override
     public void update() {
+        if(Vars.activeState!= Vars.GameState.gameplay){
+            return;
+        }
     }
 
     @Override

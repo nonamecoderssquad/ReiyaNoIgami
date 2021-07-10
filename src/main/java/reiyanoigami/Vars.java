@@ -1,15 +1,20 @@
 package reiyanoigami;
 
-import arc.struct.Seq;
-import arc.util.ColorCodes;
 import arc.util.Log;
 import reiyanoigami.game.World;
 
 public class Vars {
+    public static GameState activeState = GameState.loading;
+
     public static World world;
 
-    public static float camX;
-    public static float camY;
+    public static int offset=32;
+
+    public static int screenW=640;
+    public static int screenH=480;
+
+    public static int camX;
+    public static int camY;
 
     public static float playerX;
     public static float playerY;
