@@ -8,5 +8,6 @@ public class GameListener extends ApplicationCore {
     @Override
     public void setup() {
         new Vars();
+        add(new WorldRenderer());
     }
 }

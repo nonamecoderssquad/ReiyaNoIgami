@@ -8,6 +8,7 @@ public class Block {
     public boolean items = false;
     public int minDepth = 0;
     public Object config;
+    public int blockSize;
     // TODO: 10.07.2021 Add requested for build Items array
 
     public void onUpdate(){
