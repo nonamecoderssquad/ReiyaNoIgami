@@ -17,6 +17,7 @@ buildscript {
     }
 
     dependencies {
+        classpath arcModule('arc-core')
         classpath arcModule('extensions:packer')
     }
 }
@@ -49,8 +50,8 @@ test {
 task packSprites {
     doLast {
         TexturePacker.process(
-                "$rootDir/src/resources/sprites-raw",
-                "$rootDir/src/resources/sprites",
+                "$rootDir/src/main/resources/sprites-raw",
+                "$rootDir/src/main/resources/sprites",
                 "sprites.aatls"
         )
     }
