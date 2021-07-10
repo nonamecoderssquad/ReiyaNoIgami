@@ -1,24 +1,57 @@
+import arc.packer.*
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+
+    ext {
+        arcVersion = 'b4dc34071be92f154034d9d9621e015f5c49030c'
+        junitVersion = '5.7.0'
+
+        arcModule = { String name ->
+            if (name.contains(':')) name = name.split(':').last()
+            return "com.github.Anuken.Arc:$name:$arcVersion"
+        }
+    }
+
+    dependencies {
+        classpath arcModule('extensions:packer')
+    }
+}
+
 plugins {
     id 'java'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 group 'com.github.nonamecoderssquad'
 version '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-    maven{ url 'https://jitpack.io' }
-}
-
 dependencies {
-    implementation "com.github.Anuken.Arc:arc-core:b4dc34071be92f154034d9d9621e015f5c49030c"
-    implementation 'com.github.Anuken.Arc:backend-sdl:b4dc34071be92f154034d9d9621e015f5c49030c'
-    implementation 'com.github.Anuken.Arc:natives:b4dc34071be92f154034d9d9621e015f5c49030c'
-    implementation 'com.github.Anuken.Arc:natives-desktop:b4dc34071be92f154034d9d9621e015f5c49030c'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation arcModule('arc-core')
+    implementation arcModule('backends:backend-sdl')
+    implementation arcModule('natives:natives-desktop')
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
 test {
     useJUnitPlatform()
+}
+
+task packSprites {
+    doLast {
+        TexturePacker.process(
+                "$rootDir/src/resources/sprites-raw",
+                "$rootDir/src/resources/sprites",
+                "sprites.aatls"
+        )
+    }
 }
