@@ -1,13 +1,13 @@
 package reiyanoigami.video;
 
-import arc.ApplicationCore;
-import arc.util.Log;
-import reiyanoigami.Vars;
+import arc.*;
+import arc.graphics.g2d.*;
 
 public class GameListener extends ApplicationCore {
     @Override
     public void setup() {
-        new Vars();
+        Core.atlas = new TextureAtlas("sprites/sprites.aatls");
+
         add(new WorldRenderer());
     }
 }
