@@ -2,7 +2,6 @@ package reiyanoigami.video;
 
 import arc.ApplicationListener;
 import arc.files.Fi;
-import arc.util.Log;
 import reiyanoigami.Vars;
 
 public class WorldRenderer implements ApplicationListener {
