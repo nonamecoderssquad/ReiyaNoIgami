@@ -1,16 +1,18 @@
 package reiyanoigami.game;
 
+import reiyanoigami.game.blocks.Block;
+
 public class Tile {
     protected int x;
     protected int y;
 
     protected int depth;
 
-    protected Object floor;
-    protected Object overlay;
-    protected Object block;
+    protected Block floor;
+    protected Block overlay;
+    protected Block block;
 
-    public Tile(int x, int y, int depth, Object floor,Object overlay,Object block){
+    public Tile(int x, int y, int depth, Block floor,Block overlay,Block block){
         this.x=x;
         this.y=y;
         this.depth=depth;
@@ -20,15 +22,15 @@ public class Tile {
         // TODO: 10.07.2021 Fire tileCreatedEvent
     }
 
-    public void setFloor(Object floor){
+    public void setFloor(Block floor){
         this.floor = floor;
         // TODO: 10.07.2021 Fire FloorChangeEvent
     }
-    public void setOverlay(Object overlay){
+    public void setOverlay(Block overlay){
         this.overlay = overlay;
         // TODO: 10.07.2021 Fire OverlayChangeEvent
     }
-    public void setBlock(Object block){
+    public void setBlock(Block block){
         this.block = block;
         // TODO: 10.07.2021 Fire BlockChangeEvent
     }
