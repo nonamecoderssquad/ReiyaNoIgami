@@ -34,6 +34,8 @@ public class WorldRenderer implements ApplicationListener {
         Draw.reset();
 
         Draw.rect(Core.atlas.find("red"),16,16,32,32);
+        Draw.rect(Core.atlas.find("blue"), 48, 16, 32, 32);
+        Draw.rect(Core.atlas.find("yellow"), 80, 16, 32, 32);
 
         Draw.flush();
         Draw.reset();
