@@ -45,7 +45,6 @@ public class WorldRenderer implements ApplicationListener {
                     if (t == null) {
                         continue;
                     }
-                    int x_draw = lX < 0 ? x + Math.abs(lX) : x - lX;
                     if (t.floor != null && t.floor != Blocks.air) {
                         Draw.rect(t.floor.getDrawTexture(), Core.graphics.getWidth() / 2f + ((x - Vars.playerX / 32) * Vars.offset) + Vars.offset / 2f, (y - lY) * Vars.offset + Vars.offset / 2f);
                     }

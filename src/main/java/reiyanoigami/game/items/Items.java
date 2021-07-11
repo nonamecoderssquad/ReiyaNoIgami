@@ -7,13 +7,13 @@ public class Items {
     public static Item gold;
     public static Item uranium;
 
-    public Items(){
+    public Items() {
         iron = new Item("iron");
         copper = new Item("copper");
         titan = new Item("titan");
         gold = new Item("gold");
-        uranium = new Item("uranium"){{
-                radioactive=1f;
+        uranium = new Item("uranium") {{
+            radioactive = 1f;
         }};
     }
 }

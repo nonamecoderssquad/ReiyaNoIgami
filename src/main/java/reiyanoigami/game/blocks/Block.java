@@ -27,19 +27,19 @@ public class Block {
 
     }
 
-    public boolean canPlaceOn(Tile target){
-        if(minDepth<target.getDepth()){
+    public boolean canPlaceOn(Tile target) {
+        if (minDepth < target.getDepth()) {
             return false;
         }
         // TODO: 11.07.2021 Add water checking
-        if(target.block==null||target.block== Blocks.air){
+        if (target.block == null || target.block == Blocks.air) {
             return true;
         }
         return false;
     }
 
-    public boolean canDestroy(){
-        return synthetic&&solid;
+    public boolean canDestroy() {
+        return synthetic && solid;
     }
 
     public TextureRegion getDrawTexture() {

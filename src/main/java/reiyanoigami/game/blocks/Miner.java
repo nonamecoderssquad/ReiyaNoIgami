@@ -14,7 +14,7 @@ public class Miner extends Block {
     @Override
     public boolean canPlaceOn(Tile target) {
         boolean answer = super.canPlaceOn(target);
-        answer=answer&&(target.overlay instanceof Ore&&miningLevel>=((Ore) target.overlay).hardest);
+        answer = answer && (target.overlay instanceof Ore && miningLevel >= ((Ore) target.overlay).hardest);
         return answer;
     }
 }
