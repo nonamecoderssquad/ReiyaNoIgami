@@ -4,6 +4,8 @@ import arc.*;
 import arc.graphics.Camera;
 import arc.graphics.g2d.*;
 import arc.util.Log;
+import reiyanoigami.Vars;
+import reiyanoigami.game.World;
 
 public class GameListener extends ApplicationCore {
     @Override
@@ -13,6 +15,7 @@ public class GameListener extends ApplicationCore {
         Core.batch =(Batch) new SpriteBatch();
         Core.camera = new Camera();
         Core.camera.position.set(Core.camera.project(0, 0));
+        Vars.world=new World();
         add(new WorldRenderer());
     }
 }

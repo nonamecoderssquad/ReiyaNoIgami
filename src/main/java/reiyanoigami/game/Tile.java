@@ -8,9 +8,9 @@ public class Tile {
 
     protected int depth;
 
-    protected Block floor;
-    protected Block overlay;
-    protected Block block;
+    public Block floor;
+    public Block overlay;
+    public Block block;
 
     public Tile(int x, int y, int depth, Block floor,Block overlay,Block block){
         this.x=x;
@@ -33,5 +33,14 @@ public class Tile {
     public void setBlock(Block block){
         this.block = block;
         // TODO: 10.07.2021 Fire BlockChangeEvent
+    }
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
+    }
+    public int getDepth(){
+        return depth;
     }
 }

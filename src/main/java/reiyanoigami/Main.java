@@ -2,11 +2,13 @@ package reiyanoigami;
 
 import arc.backend.sdl.*;
 import arc.Files.*;
+import reiyanoigami.game.Blocks;
 import reiyanoigami.video.GameListener;
 
 public class Main {
     public static void main(String[] args){
         Vars.loadLogger();
+        new Blocks();
         SdlConfig gameConfig = new SdlConfig();
         String[] filePath = new String[1];
         filePath[0] = "sprites-raw/icon.png";
