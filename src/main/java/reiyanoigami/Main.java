@@ -10,11 +10,9 @@ public class Main {
         Vars.loadLogger();
         new Blocks();
         SdlConfig gameConfig = new SdlConfig();
-        String[] filePath = new String[1];
-        filePath[0] = "sprites-raw/icon.png";
         gameConfig.title = "ReiyaNoIgami";
         gameConfig.windowIconFileType = FileType.internal;
-        gameConfig.windowIconPaths = filePath;
+        gameConfig.windowIconPaths = new String[] { "sprites-raw/icon.png" };
         new SdlApplication(new GameListener(),gameConfig);
     }
 }
