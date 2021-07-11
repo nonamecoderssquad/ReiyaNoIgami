@@ -14,6 +14,7 @@ public class Main {
         gameConfig.title = "ReiyaNoIgami";
         gameConfig.windowIconFileType = FileType.internal;
         gameConfig.windowIconPaths = new String[]{"sprites-raw/icon.png"};
+        gameConfig.maximized = true;
         new SdlApplication(new GameListener(), gameConfig);
     }
 }
