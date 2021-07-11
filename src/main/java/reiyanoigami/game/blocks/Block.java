@@ -13,17 +13,19 @@ public class Block {
     public int blockSize = 1;
     // TODO: 10.07.2021 Add requested for build Items array
 
-    public Block(String name){
+    public Block(String name) {
         this.name = name;
     }
 
-    public void onUpdate(){
+    public void onUpdate() {
 
     }
-    public void onItemAccept(){
+
+    public void onItemAccept() {
 
     }
-    public TextureRegion getDrawTexture(){
+
+    public TextureRegion getDrawTexture() {
         return Core.atlas.find(this.name);
     }
 }

@@ -1,9 +1,9 @@
 package reiyanoigami.game.blocks;
 
-public class Conveyor extends Block{
-    public Conveyor(String name){
+public class Conveyor extends Block {
+    public Conveyor(String name) {
         super(name);
-        items=true;
-        synthetic=true;
+        items = true;
+        synthetic = true;
     }
 }
