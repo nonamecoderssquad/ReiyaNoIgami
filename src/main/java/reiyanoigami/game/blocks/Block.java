@@ -2,6 +2,8 @@ package reiyanoigami.game.blocks;
 
 import arc.Core;
 import arc.graphics.g2d.TextureRegion;
+import reiyanoigami.game.Blocks;
+import reiyanoigami.game.Tile;
 
 public class Block {
     public String name;
@@ -23,6 +25,21 @@ public class Block {
 
     public void onItemAccept() {
 
+    }
+
+    public boolean canPlaceOn(Tile target){
+        if(minDepth<target.getDepth()){
+            return false;
+        }
+        // TODO: 11.07.2021 Add water checking
+        if(target.block==null||target.block== Blocks.air){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean canDestroy(){
+        return synthetic&&solid;
     }
 
     public TextureRegion getDrawTexture() {
