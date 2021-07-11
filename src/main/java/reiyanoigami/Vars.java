@@ -16,8 +16,8 @@ public class Vars {
     public static int camX;
     public static int camY;
 
-    public static float playerX;
-    public static float playerY;
+    public static float playerX=3*offset;
+    public static float playerY=3*offset;
 
     public enum GameState{
         menu,

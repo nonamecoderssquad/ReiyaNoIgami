@@ -1,5 +1,8 @@
 package reiyanoigami.game.blocks;
 
+import arc.Core;
+import arc.graphics.g2d.TextureRegion;
+
 public class Block {
     public String name;
     public boolean solid = true;
@@ -20,7 +23,7 @@ public class Block {
     public void onItemAccept(){
 
     }
-    public void draw(){
-
+    public TextureRegion getDrawTexture(){
+        return Core.atlas.find(this.name);
     }
 }
