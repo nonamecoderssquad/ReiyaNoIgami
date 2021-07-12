@@ -33,9 +33,11 @@ public class WorldRenderer implements ApplicationListener {
         Core.graphics.clear(Color.black);
         Draw.proj(camera);
         Draw.reset();
+        Vars.playerX++;
+        Vars.playerY++;
         if (Vars.world != null) {
-            for (int x = getXLeftBorder(); x <= getXRightBorder(); x++) {
-                for (int y = getYDownBorder(); y <= getYUpBorder(); y++) {
+            for (int x = getXLeftBorder() - 1; x <= getXRightBorder() + 1; x++) {
+                for (int y = getYDownBorder() - 1; y <= getYUpBorder() + 1; y++) {
                     // todo: shorter if please
                     if (x < 0 || y < 0 || x >= Vars.world.tiles[Vars.world.activeDepth].length || y >= Vars.world.tiles[Vars.world.activeDepth][x].length) {
                         continue;
@@ -83,19 +85,18 @@ public class WorldRenderer implements ApplicationListener {
     }
 
     private int getXLeftBorder() {
-        return (int) ((Vars.playerX - (Core.graphics.getWidth() / 2)) / Vars.offset);
+        return (int) Vars.playerX / Vars.offset - ((Core.graphics.getWidth() / 2) / Vars.offset);
     }
 
     private int getXRightBorder() {
-        return (int) (((Core.graphics.getWidth() / 2) - Vars.playerX) / Vars.offset);
-        //((Core.graphics.getWidth()/2)-Vars.playerX)/Vars.offset;
+        return (int) Vars.playerX / Vars.offset + ((Core.graphics.getWidth() / 2) / Vars.offset);
     }
 
     private int getYDownBorder() {
-        return (int) (Vars.playerY - (Core.graphics.getHeight() / 2)) / Vars.offset;
+        return (int) Vars.playerY / Vars.offset - ((Core.graphics.getHeight() / 2) / Vars.offset);
     }
 
     private int getYUpBorder() {
-        return (int) ((Core.graphics.getHeight() / 2) - Vars.playerY) / Vars.offset;
+        return (int) Vars.playerY / Vars.offset + ((Core.graphics.getHeight() / 2) / Vars.offset);
     }
 }
