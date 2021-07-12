@@ -28,13 +28,12 @@ public class WorldRenderer implements ApplicationListener {
         if (Vars.activeState != Vars.GameState.gameplay) {
             //return;
         }
+        camera.position.set(Core.graphics.getWidth() / 2f, Core.graphics.getHeight() / 2f);
         camera.update();
         Core.graphics.clear(Color.black);
         Draw.proj(camera);
         Draw.reset();
         if (Vars.world != null) {
-            int lX = getXLeftBorder();
-            int lY = getYDownBorder();
             for (int x = getXLeftBorder(); x <= getXRightBorder(); x++) {
                 for (int y = getYDownBorder(); y <= getYUpBorder(); y++) {
                     // todo: shorter if please
@@ -46,13 +45,15 @@ public class WorldRenderer implements ApplicationListener {
                         continue;
                     }
                     if (t.floor != null && t.floor != Blocks.air) {
-                        Draw.rect(t.floor.getDrawTexture(), Core.graphics.getWidth() / 2f + ((x - Vars.playerX / 32) * Vars.offset) + Vars.offset / 2f, (y - lY) * Vars.offset + Vars.offset / 2f);
+                        // Draw.rect(t.floor.getDrawTexture(), Core.graphics.getWidth() / 2f + ((x - Vars.playerX / 32) * Vars.offset) + Vars.offset / 2f, (y - lY) * Vars.offset + Vars.offset / 2f);
+                        Draw.rect(t.floor.getDrawTexture(), x * Vars.offset + Vars.offset / 2f, y * Vars.offset + Vars.offset / 2f);
                     }
                     if (t.overlay != null && t.overlay != Blocks.air) {
-                        Draw.rect(t.overlay.getDrawTexture(), (x - lX) * Vars.offset + Vars.offset / 2f, (y - lY) * Vars.offset + Vars.offset / 2f);
+                        Draw.rect(t.overlay.getDrawTexture(), x * Vars.offset + Vars.offset / 2f, y * Vars.offset + Vars.offset / 2f);
                     }
                     if (t.block != null && t.block != Blocks.air) {
-                        Draw.rect(t.block.getDrawTexture(), (x - lX) * Vars.offset + Vars.offset / 2f, (y - lY) * Vars.offset + Vars.offset / 2f);
+                        // Draw.rect(t.block.getDrawTexture(), (x - lX) * Vars.offset + Vars.offset / 2f, (y - lY) * Vars.offset + Vars.offset / 2f);
+                        Draw.rect(t.block.getDrawTexture(), x * Vars.offset + Vars.offset / 2f, y * Vars.offset + Vars.offset / 2f);
                     }
                 }
             }

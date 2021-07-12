@@ -7,11 +7,13 @@ buildscript {
     }
 
     ext {
+        mainClassName = 'reiyanoigami.Main'
+
         arcVersion = 'b4dc34071be92f154034d9d9621e015f5c49030c'
         junitVersion = '5.7.0'
 
         arcModule = { String name ->
-            if (name.contains(':')) name = name.split(':').last()
+            if (name.contains(':')) name = name.split(':')[name.split(':').length - 1]
             return "com.github.Anuken.Arc:$name:$arcVersion"
         }
     }
@@ -41,6 +43,11 @@ dependencies {
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+task run(type: JavaExec, dependsOn: classes) {
+    mainClass.set project.mainClassName
+    classpath sourceSets.main.runtimeClasspath
 }
 
 test {
