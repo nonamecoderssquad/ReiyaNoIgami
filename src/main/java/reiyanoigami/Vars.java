@@ -10,14 +10,8 @@ public class Vars {
 
     public static int offset = 32;
 
-    public static int screenW = 640;
-    public static int screenH = 480;
-
-    public static int camX;
-    public static int camY;
-
-    public static float playerX = offset * 3;
-    public static float playerY = offset * 3;
+    public static float playerX = 0;
+    public static float playerY = 0;
 
     public static void loadLogger() {
         String[] stags = {"&lc&fb[D]", "&lb&fb[I]", "&ly&fb[W]", "&lr&fb[E]", ""};

@@ -45,15 +45,13 @@ public class WorldRenderer implements ApplicationListener {
                         continue;
                     }
                     if (t.floor != null && t.floor != Blocks.air) {
-                        // Draw.rect(t.floor.getDrawTexture(), Core.graphics.getWidth() / 2f + ((x - Vars.playerX / 32) * Vars.offset) + Vars.offset / 2f, (y - lY) * Vars.offset + Vars.offset / 2f);
-                        Draw.rect(t.floor.getDrawTexture(), x * Vars.offset + Vars.offset / 2f, y * Vars.offset + Vars.offset / 2f);
+                        Draw.rect(t.floor.getDrawTexture(), Core.graphics.getWidth() / 2f + ((x - Vars.playerX / 32) * Vars.offset) + Vars.offset / 2f, Core.graphics.getHeight() / 2f + ((y - Vars.playerY / 32) * Vars.offset) + Vars.offset / 2f);
                     }
                     if (t.overlay != null && t.overlay != Blocks.air) {
-                        Draw.rect(t.overlay.getDrawTexture(), x * Vars.offset + Vars.offset / 2f, y * Vars.offset + Vars.offset / 2f);
+                        Draw.rect(t.overlay.getDrawTexture(), Core.graphics.getWidth() / 2f + ((x - Vars.playerX / 32) * Vars.offset) + Vars.offset / 2f, Core.graphics.getHeight() / 2f + ((y - Vars.playerY / 32) * Vars.offset) + Vars.offset / 2f);
                     }
                     if (t.block != null && t.block != Blocks.air) {
-                        // Draw.rect(t.block.getDrawTexture(), (x - lX) * Vars.offset + Vars.offset / 2f, (y - lY) * Vars.offset + Vars.offset / 2f);
-                        Draw.rect(t.block.getDrawTexture(), x * Vars.offset + Vars.offset / 2f, y * Vars.offset + Vars.offset / 2f);
+                        Draw.rect(t.block.getDrawTexture(), Core.graphics.getWidth() / 2f + ((x - Vars.playerX / 32) * Vars.offset) + Vars.offset / 2f, Core.graphics.getHeight() / 2f + ((y - Vars.playerY / 32) * Vars.offset) + Vars.offset / 2f);
                     }
                 }
             }
