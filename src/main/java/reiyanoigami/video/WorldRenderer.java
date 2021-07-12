@@ -5,6 +5,8 @@ import arc.Core;
 import arc.files.Fi;
 import arc.graphics.Color;
 import arc.graphics.g2d.Draw;
+import arc.input.KeyCode;
+
 import reiyanoigami.Vars;
 import reiyanoigami.game.Blocks;
 import reiyanoigami.game.Tile;
@@ -33,8 +35,12 @@ public class WorldRenderer implements ApplicationListener {
         Core.graphics.clear(Color.black);
         Draw.proj(camera);
         Draw.reset();
-        Vars.playerX++;
-        Vars.playerY++;
+
+        if(Core.input.keyDown(KeyCode.w)) Vars.playerY++;
+        if(Core.input.keyDown(KeyCode.a)) Vars.playerX--;
+        if(Core.input.keyDown(KeyCode.s)) Vars.playerY--;
+        if(Core.input.keyDown(KeyCode.d)) Vars.playerX++;
+
         if (Vars.world != null) {
             for (int x = getXLeftBorder() - 1; x <= getXRightBorder() + 1; x++) {
                 for (int y = getYDownBorder() - 1; y <= getYUpBorder() + 1; y++) {
