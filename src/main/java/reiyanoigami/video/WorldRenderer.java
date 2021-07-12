@@ -38,7 +38,7 @@ public class WorldRenderer implements ApplicationListener {
             for (int x = getXLeftBorder(); x <= getXRightBorder(); x++) {
                 for (int y = getYDownBorder(); y <= getYUpBorder(); y++) {
                     // todo: shorter if please
-                    if (x < 0 || y < 0 || x > Vars.world.tiles[Vars.world.activeDepth].length || y > Vars.world.tiles[Vars.world.activeDepth][x].length) {
+                    if (x < 0 || y < 0 || x >= Vars.world.tiles[Vars.world.activeDepth].length || y >= Vars.world.tiles[Vars.world.activeDepth][x].length) {
                         continue;
                     }
                     Tile t = Vars.world.tiles[Vars.world.activeDepth][x][y];
