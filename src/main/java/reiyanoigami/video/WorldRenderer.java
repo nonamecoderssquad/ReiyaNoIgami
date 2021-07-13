@@ -36,10 +36,27 @@ public class WorldRenderer implements ApplicationListener {
         Draw.proj(camera);
         Draw.reset();
 
-        if(Core.input.keyDown(KeyCode.w)) Vars.playerY++;
-        if(Core.input.keyDown(KeyCode.a)) Vars.playerX--;
-        if(Core.input.keyDown(KeyCode.s)) Vars.playerY--;
-        if(Core.input.keyDown(KeyCode.d)) Vars.playerX++;
+        // TODO: refactor movement into separated class
+        if(Core.input.keyDown(KeyCode.w)) {
+            for (int i = 0; i < 10; i++) {
+                Vars.playerY+=0.1;
+            }
+        }
+        if(Core.input.keyDown(KeyCode.s)) {
+            for (int i = 0; i < 10; i++) {
+                Vars.playerY-=0.1;
+            }
+        }
+        if(Core.input.keyDown(KeyCode.d)) {
+            for (int i = 0; i < 10; i++) {
+                Vars.playerX+=0.1;
+            }
+        }
+        if(Core.input.keyDown(KeyCode.a)) {
+            for (int i = 0; i < 10; i++) {
+                Vars.playerX-=0.1;
+            }
+        }
 
         if (Vars.world != null) {
             for (int x = getXLeftBorder() - 1; x <= getXRightBorder() + 1; x++) {
