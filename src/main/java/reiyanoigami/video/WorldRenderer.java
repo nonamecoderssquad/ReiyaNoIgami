@@ -5,7 +5,6 @@ import arc.Core;
 import arc.files.Fi;
 import arc.graphics.Color;
 import arc.graphics.g2d.Draw;
-
 import reiyanoigami.Vars;
 import reiyanoigami.game.Blocks;
 import reiyanoigami.game.Tile;
@@ -36,8 +35,7 @@ public class WorldRenderer implements ApplicationListener {
         Draw.proj(camera);
         Draw.reset();
 
-        InputHandler handler = new InputHandler();
-        handler.playerMovement();
+        InputHandler.playerMovement();
 
         if (Vars.world != null) {
             for (int x = getXLeftBorder() - 1; x <= getXRightBorder() + 1; x++) {

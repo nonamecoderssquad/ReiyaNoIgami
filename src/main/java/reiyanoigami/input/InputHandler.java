@@ -5,7 +5,7 @@ import arc.input.KeyCode;
 import reiyanoigami.Vars;
 
 public class InputHandler {
-    public void playerMovement() {
+    public static void playerMovement() {
         if (Core.input.keyDown(KeyCode.w)) {
             for (int i = 0; i < 10; i++) {
                 Vars.playerY += 0.1;
@@ -26,37 +26,18 @@ public class InputHandler {
                 Vars.playerX -= 0.1;
             }
         }
-        if (Core.input.keyRelease(KeyCode.w)) {
-            for(int i = 0; i < 5; i++) {
-                Vars.playerY += 0.2;
-            }
-            for(int i = 0; i < 5; i++) {
-                Vars.playerY -= 0.2;
-            }
+
+        if (Vars.playerX > Vars.world.width * Vars.offset) {
+            Vars.playerX = Vars.world.width * Vars.offset;
         }
-        if (Core.input.keyRelease(KeyCode.s)) {
-            for(int i = 0; i < 5; i++) {
-                Vars.playerY -= 0.2;
-            }
-            for(int i = 0; i < 5; i++) {
-                Vars.playerY += 0.2;
-            }
+        if (Vars.playerY > Vars.world.height * Vars.offset) {
+            Vars.playerY = Vars.world.height * Vars.offset;
         }
-        if (Core.input.keyRelease(KeyCode.d)) {
-            for(int i = 0; i < 5; i++) {
-                Vars.playerX += 0.2;
-            }
-            for(int i = 0; i < 5; i++) {
-                Vars.playerX -= 0.2;
-            }
+        if (Vars.playerX < 0) {
+            Vars.playerX = 0;
         }
-        if (Core.input.keyRelease(KeyCode.a)) {
-            for(int i = 0; i < 5; i++) {
-                Vars.playerX -= 0.2;
-            }
-            for(int i = 0; i < 5; i++) {
-                Vars.playerX += 0.2;
-            }
+        if (Vars.playerY < 0) {
+            Vars.playerY = 0;
         }
     }
 }

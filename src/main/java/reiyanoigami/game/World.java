@@ -23,6 +23,8 @@ public class World {
         tmp.add(Blocks.grass);
         tmp.add(Blocks.sand);
         tmp.add(Blocks.stone);
+        width = 25;
+        height = 25;
         tiles = new Tile[3][25][25];
         for (int d = 0; d < 3; d++) {
             for (int x = 0; x < 25; x++) {
